@@ -1,0 +1,14 @@
+<core:FragmentDefinition
+	xmlns:core="sap.ui.core"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m"
+	xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page
+		title="Your Location"
+		showNavButton="true"
+		navButtonPress="handleBackMap">
+		<content>
+			<core:HTML id="idHtmlContent" afterRendering="handleMapAfterRendering" />
+		</content>
+	</Page>
+</core:FragmentDefinition>

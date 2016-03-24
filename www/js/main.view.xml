@@ -1,0 +1,71 @@
+<core:View
+	xmlns:core="sap.ui.core"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m"
+	xmlns:f="sap.ui.layout.form"
+	controllerName="com.sap.dkom.main"
+	xmlns:html="http://www.w3.org/1999/xhtml">
+	<NavContainer id="navCon">
+		<Page
+			id="listPage"
+			title="OpenUI5 + Cordova">
+			<headerContent>
+				<Button
+					icon="sap-icon://add"
+					press="handleNewUserPress" />
+			</headerContent>
+			<content>
+				<List
+					items="{UserCollection>/}"
+					mode="SingleSelectMaster"
+					select="handleUserSelected"
+					rememberSelections="false">
+					<StandardListItem
+						title="{UserCollection>name}"
+						description="{UserCollection>company}"
+						icon="{UserCollection>picture}"
+						type="Navigation" />
+				</List>
+			</content>
+		</Page>
+		<Page
+			id="detailPage"
+			showNavButton="true"
+			navButtonPress="handleBack"
+			title="{SelectedUser>/name}">
+			<content>
+				<VBox alignItems="Center">
+					<Image src="{SelectedUser>/picture}" />
+				</VBox>
+				<VBox class="sapUiSmallMargin">
+					<f:SimpleForm id="SimpleFormDisplay354"
+						minWidth="1024"
+						maxContainerCols="2"
+						editable="false"
+						layout="ResponsiveGridLayout"
+						labelSpanL="3"
+						labelSpanM="3"
+						emptySpanL="4"
+						emptySpanM="4"
+						columnsL="1"
+						columnsM="1">
+						<f:content>
+							<Label text="Name" />
+							<Text text="{SelectedUser>/name}" />
+							<Label text="Age" />
+							<Text text="{SelectedUser>/age}" />
+							<Label text="Company" />
+							<Text text="{SelectedUser>/company}" />
+							<Label text="Phone" />
+							<Link text="{SelectedUser>/phone}" emphasized="true" href="tel:{SelectedUser>/phone}" />
+							<Label text="Email" />
+							<Text text="{SelectedUser>/email}" />
+							<Label text="Address" />
+							<Text text="{SelectedUser>/address}" />
+						</f:content>
+					</f:SimpleForm>
+				</VBox>
+			</content>
+		</Page>
+	</NavContainer>
+</core:View>

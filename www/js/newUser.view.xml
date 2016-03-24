@@ -1,0 +1,65 @@
+<core:View
+	xmlns:core="sap.ui.core"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:l="sap.ui.layout"
+	controllerName="com.sap.dkom.newUser"
+	xmlns:html="http://www.w3.org/1999/xhtml">
+	<NavContainer	id="navConNewUser">
+		<Page
+			title="New User"
+			showNavButton="true"
+			navButtonPress="handleBack">
+			<content>
+				<VBox class="sapUiSmallMargin">
+					<f:SimpleForm id="SimpleFormDisplay354"
+						minWidth="1024"
+						maxContainerCols="2"
+						editable="false"
+						layout="ResponsiveGridLayout"
+						labelSpanL="3"
+						labelSpanM="3"
+						emptySpanL="4"
+						emptySpanM="4"
+						columnsL="1"
+						columnsM="1">
+						<f:content>
+							<Label text="Name" />
+							<Input type="text" value="{NewUser>/name}" placeholder="Enter user name"/>
+							<Label text="Age" />
+							<Input type="number" value="{NewUser>/age}" placeholder="Enter user age"/>
+							<Label text="Company" />
+							<Input type="text" value="{NewUser>/company}" placeholder="Enter user age" />
+							<Label text="Phone" />
+							<Input type="tel" value="{NewUser>/phone}" placeholder="Enter user phone" />
+							<Label text="Email" />
+							<Input type="email" value="{NewUser>/email}" placeholder="Enter user email" />
+							<Label text="Address" />
+							<Input type="text" value="{NewUser>/address}" placeholder="Enter user address" />
+							<Button
+								icon="sap-icon://map"
+								press="openMap"/>
+							<Label text="Picture" />
+							<Image src="{NewUser>/picture}" visible="{path: 'NewUser>/picture', formatter: '.imageVisible'}"/>
+							<Button
+								icon="sap-icon://camera"
+								press="takePhoto">
+								<layoutData>
+									<l:GridData span="L4 M4 S6" />
+								</layoutData>
+							</Button>
+							<Button
+								icon="sap-icon://search"
+								press="choosePhoto">
+								<layoutData>
+									<l:GridData span="L4 M4 S6" />
+								</layoutData>
+							</Button>
+						</f:content>
+					</f:SimpleForm>
+				</VBox>
+			</content>
+		</Page>
+	</NavContainer>
+</core:View>
